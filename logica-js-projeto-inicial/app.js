@@ -1,16 +1,16 @@
 //Adivinhando o número secreto
 
-//alert('Boas vindas ao jogo do número secreto');
+alert('Boas vindas ao jogo do número secreto');
 
-//let numeroSecreto = 5;
+let numeroSecreto = 5;
 
-//let chute = prompt('Escolha um número entre 1 e 10');
+let chute = prompt('Escolha um número entre 1 e 10');
 
-//if(numeroSecreto == chute){
- //   console.log(`Você acertou o número secreto ${numeroSecreto}!!`);
-//} else{
-//    console.log('Tente novamente :(');
-//}
+if(numeroSecreto == chute){
+  console.log(`Você acertou o número secreto ${numeroSecreto}!!`);
+} else{
+    console.log('Tente novamente :(');
+}
 
 
 
