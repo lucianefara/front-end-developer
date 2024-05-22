@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    A convenção que usaremos para criar nosso programa é adotar letras minúsculas e não usar acentos e, claro, usar a extensão .html. <br>
+
+        Outro ponto importante é que toda alteração feita no arquivo .html deve ser salva e, além disso, o navegador precisa recarregar a página para que a última alteração do arquivo entre em vigor. 
+        
+        <hr>
+
+    <script>
+
+        let ano = 2016;        
+
+        document.write("Flávio tem " + (ano - 1977) + " anos <br>");
+
+        ano = 2017;
+
+        document.write("Barney tem: " + (ano - 1976));
+
+        let idadeFlavio = 39;
+        let idadeJoaquim = 20;
+        let idadeBarney = 41;
+
+        var media = (idadeFlavio + idadeJoaquim + idadeBarney)/3;
+
+        document.write('<br>');
+
+        document.write('A média das idades é ' + Math.round(media));
+      
+
+       
+        let nome = 'Flavio';
+
+        document.write('<br> Oi, ' + nome);
+
+        document.write('<hr>');
+
+
+        //Função com parâmetro
+
+       function mostra(texto){
+        
+            document.write(texto);
+        }
+
+        mostra("oie <br>");
+        mostra("Fernando");
+        
+    </script>
+
+
+</body>
+
+
+
+
+</html>
