@@ -17,11 +17,7 @@
 
             document.write(frase);
             pulaLinha();
-        }
-
-        let peso = prompt('Qual é o seu peso?');
-        let altura = prompt('Qual é a sua altura?');
-        let imc;
+        }      
 
        
         function calculoIMC(peso, altura){
@@ -31,8 +27,33 @@
 
         }       
 
+        let peso = prompt('Qual é o seu peso?');
+        let altura = prompt('Qual é a sua altura?');
+
+       
+        let imc = calculoIMC(peso, altura);
+        
+        
+
+        if ( imc < 18.5){
+
+            mostra("Você está abaixo do peso recomendado");
+        }
+
+        if( imc > 35){
+
+            mostra("Você está acima do peso recomendado");
+        }
+
+        if( imc>= 18.5 && imc <= 35){
+
+            mostra("Você está com o peso ideal!!");
+        }
+
 
         document.write("O imc é de: " + imc);
+
+        
 
 
         
