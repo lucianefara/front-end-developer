@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo de adivinhação</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        function pulaLinha() {
+            document.write("<br>");
+            document.write("<br>");
+        }
+
+        function mostra(frase) {
+
+            document.write(frase);
+            pulaLinha();
+        }
+
+
+
+        let numeroAleatorio = Math.round(Math.random() * 10);    
+        
+        console.log(numeroAleatorio);
+
+        let tentativa = 1;        
+
+        while (tentativa < 3) {            
+
+           let palpite = parseInt(prompt("Tente adivinhar o número escolhido"));
+
+            if (numeroAleatorio == palpite) {
+                mostra("Você acertou!! O número pensado era " + numeroAleatorio); 
+                break;
+
+
+            } else {
+                mostra("Você errou!!");                
+
+                tentativa++;
+
+            }
+
+
+        }
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+</body>
+
+</html>
