@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alterando Cores do Ponteiro</title>
+</head>
+
+<body>
+
+    <canvas width="600" height="400"></canvas>
+
+    <script>
+
+        let tela = document.querySelector('canvas');
+        let pincel = tela.getContext('2d');
+
+
+        //desenhar a tela
+        pincel.fillStyle = 'grey';
+        pincel.fillRect(0,0,600,400);
+
+        //criar paleta de cores
+        let cores = ['blue', 'red', 'green'];
+        let indiceCorAtual = 0;
+
+
+        function desenhaCirculo(evento){
+
+            //Utilizo o offsetLeft para considera o espaço em branco que existe entre minha tela e o canvas
+            //coordenadas de onde está sendo clicado
+            let x = evento.pageX - tela.offsetLeft;        
+            let y = evento.pageY - tela.offsetTop;
+
+            //selecao de cor do ponteiro
+            pincel.fillStyle = cores[indiceCorAtual];
+            //formar ponteiro
+            pincel.beginPath();
+            pincel.arc(x, y, 10, 0, 2*3.14); //10 tamanho do raio //0 é o caminho inicial
+            pincel.fill();
+
+            console.log(x + ',' + y);
+            
+        }
+
+        tela.onclick = desenhaCirculo;
+
+
+        function mudaCor(){
+            indiceCorAtual++;
+
+            if(indiceCorAtual >= cores.length){
+                indiceCorAtual = 0;
+            }
+
+            return false;
+        }
+
+        tela.oncontextmenu = mudaCor;
+
+        
+    </script>
+    
+</body>
+</html>
