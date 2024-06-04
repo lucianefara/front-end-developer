@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programa 3 - Alterando tamanho do ponteiro</title>
+</head>
+<body>
+
+    <canvas width="600" height="400"></canvas>
+
+    <script>
+
+        let tela = document.querySelector('canvas');
+        let pincel = tela.getContext('2d');
+
+        pincel.fillStyle = 'grey';
+        pincel.fillRect(0,0,600,400);
+
+
+        function desenhaCirculo(evento){
+
+            //Utilizo o offsetLeft para considera o espaço em branco que existe entre minha tela e o canvas
+            let x = evento.pageX - tela.offsetLeft;        
+            let y = evento.pageY - tela.offsetTop;
+
+            //tamanho ponteiro
+            let raio = 10;
+
+            console.log(x + ',' + y);
+
+            //se tecla shift pressionada
+            if(evento.shiftKey) {
+
+                raio = raio + 20; 
+            }
+
+            //ponteiro
+            pincel.fillStyle = 'violet';
+            pincel.beginPath();
+            pincel.arc(x, y, raio, 0, 2*3.14); //10 tamanho do raio //0 é o caminho inicial
+            pincel.fill();            
+            
+        }
+
+        tela.onclick = desenhaCirculo;
+        
+    </script>
+    
+</body>
+</html>
